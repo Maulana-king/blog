@@ -1,4 +1,5 @@
-var bodyParser       = require ("body-parser"),
+var PORT = process.env.PORT || 4000,
+    bodyParser       = require ("body-parser"),
     methodOverride   = require("method-override"),
     expressSanitizer = require("express-sanitizer"),
     mongoose         = require("mongoose"),
@@ -109,6 +110,4 @@ var bodyParser       = require ("body-parser"),
         //Redirect Somewhere
     });
 
-    app.listen(8080, function(req, res){
-        console.log("Server was start now..!");
-    });
+    app.listen(PORT, () => console.log(`app listening on port ${PORT}`));
